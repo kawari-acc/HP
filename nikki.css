@@ -1,17 +1,45 @@
+body {
+    background-color: #dbdbdb;
+    color: rgb(0, 0, 0);
+    font-family: "DotGothic16", sans-serif;
+
+}
+
 h2,p,button{
     text-align: center;
   }
+
+  h2 {
+    color: #000000; /* 好きな色に変更 */
+  }
+
+/* メニューボタン */
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background: #e4e4e4;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
   /* 左側の固定サイドバー */
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 140px;
+    left: -160px;
+    width: 160px;
     height: 100%;
     background-color: #f0f0f0;
-    padding-top: 20px;
+    padding-top: 60px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 1000;
+    transition: left 0.3s ease; /* ← スライドアニメーション */
+    z-index: 1500;
+
   }
   
   /* サイドバーのリンク */
@@ -27,7 +55,21 @@ h2,p,button{
     background-color: #ddd;
   }
   
-  /* 本文がサイドバーに重ならないように余白を作る */
-  body {
-    margin-left: 160px;
+  .sidebar a[href*="pixiv"] {
+    color: #cc111b;
+    font-weight: bold;
   }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+
+  .entry {
+    background: rgb(255, 255, 255); /* うっすら白 */
+    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 1.2em;
+    margin: 1.5em 0;
+    border-radius: 6px;
+  }
+  

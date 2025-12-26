@@ -6,7 +6,7 @@
   <title>日記</title>
 </head>
 <body>
-  <h2>日記ページ</h2>
+  <h2>日記(管理者用)</h2>
 
   <!-- 投稿フォーム -->
   <textarea id="text" placeholder="ここに日記を書きます"></textarea>
@@ -136,6 +136,20 @@ if (input !== password) {
     // 初回読み込み
     loadDiary();
   </script>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<script src="tab.js">
+</script>
+<div class="sidebar" id="sidebar">
+
+    <a href="index.html"class="active">トップ画面</class>
+    <a href="profile.html">わたし</a>
+    <a href="nikki.html">日記</a>
+    <a href="e.html">絵</a>
+    <a href="sonota.html">その他</a>
+    <a href="rennraku.html">ご連絡</a>
+    <a href="admin.html">管理権限</a>
+</div>
 
 </body>
 </html>

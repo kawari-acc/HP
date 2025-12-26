@@ -5,30 +5,48 @@
 　<meta charset="UTF-8">
 　<meta name="viewport" content="width=device-width, initial-scale=1.0">
 　<link rel="stylesheet" href="tab.css">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 　<title>かわり</title>
 </head>
 
 <body>
+<div id="content">
 　<h2>代わり</h2>
-　<p>ホームページです。</p>
+　<p>代わりのホームページです.<br>手作り感満載ですが面白がってください.<br>各ページは左をタップだよ～</p>
 <img src="title.png" alt="タイトル画像は表示されていません"class="title-img">
 
+<a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
 
-<button id="menu1"></button>
-<div id="open-area"></div>
-<nav id="Yoko-list">
-<ul>
-    <li><class="active">家</li>
-    <li><a href="nikki.html">日記</a></li>
-    <li><a href="e.html">絵</a></li>
-    <li><a href="sonota.html">その他</a></li>
-    <li><a href="admin.html">管理者権限</a></li>
 
-</ul>
-</nav>
+</div>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div class="sidebar" id="sidebar">
+
+    <a href="index.html"class="active">トップ画面</class>
+    <a href="profile.html">わたし</a>
+    <a href="nikki.html">日記</a>
+    <a href="e.html">絵</a>
+    <a href="sonota.html">その他</a>
+    <a href="rennraku.html">ご連絡</a>
+    <a href="admin.html">管理権限</a>
+    <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
+</div>
 
 <script src="tab.js">
 </script>
-
+<script>
+    setInterval(() => {
+    　const content = document.getElementById("content");
+      content.classList.add("shake");
+      setTimeout(() => {
+        content.classList.remove("shake");
+      }, 250); // 揺れが終わったらクラスを外す
+    }, 5000); // 5秒ごとに揺れる
+</script>
 </body>
+
+
+  
 </html>

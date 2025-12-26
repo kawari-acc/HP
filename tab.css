@@ -1,10 +1,59 @@
 body {
     background-color: #000000;
     color: white;
+    font-family: "DotGothic16", sans-serif;
+    cursor: url("https://cur.cursors-4u.net/cursors/cur-2/cur117.cur"), auto;/*本文カーソル*/
+
 }
+
+.content {
+  animation: wobble 3s infinite ease-in-out;
+  filter: blur(1px) contrast(120%);
+}
+
+#content {
+  width: 75%;
+  margin: 0 auto;
+  padding-left: 20px; /* 必要なら調整 */
+}
+
+/*ホラー風加工フィルター*/
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: #cc111b;
+  background: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+  opacity: 0.20;
+}
+
+/* 画面揺れエフェクト */
+@keyframes screen-shake-distort {
+  0%   { transform: translate(0, 0) skew(0deg, 0deg); }
+  5%   { transform: translate(-5px, 0px) skew(1deg, -1deg); }
+  8%  { transform: translate(10px, 1px) skew(5deg, 5deg); }
+  15%  { transform: translate(-10px, 1px) skew(15deg, 15deg); }
+  80%  { transform: translate(10px, 1px) skew(-1deg, -1deg); }
+  100% { transform: translate(0, 0) skew(0deg, 0deg); }
+}
+
+#content.shake {
+  animation: screen-shake-distort 0.1s ease-in-out;
+  will-change: transform; /*余韻消し*/
+}
+
+
 
 h2,p,button{
   text-align: center;
+}
+
+h2 {
+  text-shadow: 0 0 15px #ff0000;
 }
 
 /*タイトル画像用*/
@@ -19,6 +68,12 @@ img{
   display: block;  /* 中央寄せのため */
   margin: 0 auto;  /* 中央に配置 */
 }
+.icon-img {
+  width: 35%;      /* 画面幅の50% */
+  height: auto;    /* 縦横比を保つ */
+  display: block;  /* 中央寄せのため */
+  margin: 0 auto;  /* 中央に配置 */
+}
 /*タイトル画像用ここまで*/
 
 
@@ -27,37 +82,76 @@ img{
     padding-left: 0;
   }
 
-  #Yoko-list{
-    position:fixed;
-    top: 0;
-    left: -100px; /*隠す*/
-    width: 100px;
-    height: 100%;
-    background: #555555;
-    color: white;
-    padding: 20px;
-    transition: left 0.3s ease;
-  }
-
-/* メニューが開いた状態 */
-#Yoko-list.open {
-  left: 0;
-}
-
-/* ボタン */
-#menu {
+/* メニューボタン */
+.menu-btn {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  background: #9802d4;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  z-index: 2000;
+
 }
 
-/* 左側の透明クリックエリア */
-#open-area {
+/* サイドバー（最初は隠す） */
+.sidebar {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 40px;   /* ここを広げると押しやすくなる */
+  left: -160px; /* ← 隠す位置 */
+  width: 160px;
   height: 100%;
-  z-index: 900;
+  background-color: #f0f0f0;
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  transition: left 0.3s ease; /* ← スライドアニメーション */
+  z-index: 1500;
+
+}
+
+/* サイドバーのリンク */
+.sidebar a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+/* サイドバーが開いた状態 */
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar a[href*="pixiv"] {
+  color: #cc111b;
+  font-weight: bold;
+}
+
+/*カーソル*/
+.sidebar,
+.sidebar a,
+.sidebar a:hover,
+.menu-btn
+{
+  cursor: url("https://cur.cursors-4u.net/cursors/cur-2/cur117.cur"), auto;
+}
+
+
+/*以下profileについて*/
+.box {
+  width: 45%;
+  border: 2px solid #1805c000; /* 枠線の色 */
+  padding: 12px;
+  border-radius: 8px;        /* 角丸 */
+  background-color: #150aaa; /* 背景色（薄い青） */
+  margin: 16px auto;
+  text-align: center;
+
 }

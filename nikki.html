@@ -9,12 +9,6 @@
 
   <h2>日記（閲覧用）</h2>
 
-<div class="sidebar">
-  <a href="index.html">家</a>
-  <a class="active"></class>日記</a>
-  <a href="admin.html">管理ページ</a>
-</div>
-
   <div id="list"></div>
 
   <script type="module">
@@ -36,6 +30,7 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
+    
     // ▼ 日記を読み込んで表示する処理
     async function loadDiary() {
       const diaryRef = collection(db, "diary");
@@ -62,5 +57,20 @@
     loadDiary();
   </script>
 
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div class="sidebar" id="sidebar">
+
+    <a href="index.html"class="active">トップ画面</class>
+    <a href="profile.html">わたし</a>
+    <a href="nikki.html">日記</a>
+    <a href="e.html">絵</a>
+    <a href="sonota.html">その他</a>
+    <a href="rennraku.html">ご連絡</a>
+    <a href="admin.html">管理権限</a>
+    <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
+</div>
+<script src="tab.js">
+</script>
 </body>
 </html>

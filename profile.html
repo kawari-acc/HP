@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+<head>
+　<meta charset="UTF-8">
+　<meta name="viewport" content="width=device-width, initial-scale=1.0">
+　<link rel="stylesheet" href="tab.css">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+　<title>ry</title>
+</head>
+
+<body>
+<div id="content">
+　<h2>わたしについて</h2>
+　<p>
+    こんな場所まで見る方もそうそういないでしょう.
+    <br>特別な方です.</p>
+<img src="icon.jpg" alt="アイコンは表示されていません"class="icon-img">
+
+<div class="box">
+    HN
+</div>
+<p>
+    代わり(かわり)<br><br>
+</p>
+
+<div class="box">
+    ほむぺを作った理由
+</div>
+<p>
+    人が増えるとすぐにsnsアカウントを消す癖が治らず,個人サイトを作ってみました.<br><br>
+</p>
+
+<div class="box">
+    HNについて
+</div>
+<p>
+    たくさんHNがあります.リセットの名残です.もう変えないと決意しそれらの代わりにこのアカウント名をつけました.<br><br>
+</p>
+
+<div class="box">
+    意気込み
+</div>
+<p>
+    私の作品を好きになってくださった方や見てくださる方に失礼の無いような安定した活動をしたいです.<br><br>
+</p>
+
+<div class="box">
+    ご連絡先
+</div>
+<p>
+    以下にご連絡ください。酷いものは対応しません.<br>
+    kawarigawari2@gmail.com
+</p>
+</div>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div class="sidebar" id="sidebar">
+
+    <a href="index.html"class="active">トップ画面</class>
+    <a href="profile.html">わたし</a>
+    <a href="nikki.html">日記</a>
+    <a href="e.html">絵</a>
+    <a href="sonota.html">その他</a>
+    <a href="rennraku.html">ご連絡</a>
+    <a href="admin.html">管理権限</a>
+    <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
+</div>
+
+<script src="tab.js">
+</script>
+<script>
+    setInterval(() => {
+    　const content = document.getElementById("content");
+      content.classList.add("shake");
+      setTimeout(() => {
+        content.classList.remove("shake");
+      }, 250); // 揺れが終わったらクラスを外す
+    }, 8000); // 8秒ごとに揺れる
+</script>
+</body>
+</html>
