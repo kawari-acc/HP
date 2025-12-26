@@ -1,0 +1,48 @@
+body {
+    background-color: #000000;
+    color: white;
+}
+
+h2,p,button{
+  text-align: center;
+}
+
+  ul{
+    list-style: none;
+    padding-left: 0;
+  }
+
+  #Yoko-list{
+    position:fixed;
+    top: 0;
+    left: -100px; /*隠す*/
+    width: 100px;
+    height: 100%;
+    background: #555555;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease;
+  }
+
+/* メニューが開いた状態 */
+#Yoko-list.open {
+  left: 0;
+}
+
+/* ボタン */
+#menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* 左側の透明クリックエリア */
+#open-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;   /* ここを広げると押しやすくなる */
+  height: 100%;
+  z-index: 900;
+}
