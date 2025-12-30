@@ -52,7 +52,6 @@ h2,p,button{
     padding: 12px 16px;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
   }
   
   .sidebar a:hover {
@@ -91,14 +90,7 @@ h2,p,button{
 
   }
 
-  /*さいず*/
-  /* nikki.html の画像を index.html と同じ大きさにする */
-.entry img,
-.date-group img,
-img {
-  width: 45% !important;
-  height: auto;
-}
+
 
   .entry p:first-child {
     line-height: 1.1;   /* 行間を詰める */
