@@ -76,6 +76,14 @@ img{
 }
 /*タイトル画像用ここまで*/
 
+.banner {
+  width: 300px;   /* 好きな幅に調整 */
+  display: block;
+  margin: 20px auto; /* 中央寄せ */
+  cursor: pointer;
+}
+
+
 
   ul{
     list-style: none;

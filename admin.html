@@ -6,6 +6,15 @@
   <title>日記</title>
 </head>
 <body>
+  <script>
+    const password = "15672025";
+    const input = prompt("パスワードが必要です");
+  
+    if (input !== password) {
+      alert("パスワードが違います");
+      window.location.href = "nikki.html"; 
+    }
+  </script>
   <h2>日記(管理者用)</h2>
 
   <!-- 投稿フォーム -->
@@ -18,138 +27,22 @@
   <h3>投稿された日記</h3>
   <div id="list"></div>
 
-<script>
-const password = "15672025"; //pass
+  <!-- メニュー -->
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <script src="tab.js"></script>
 
-const input = prompt("パスワードが必要です");
+  <div class="sidebar" id="sidebar">
+      <a href="index.html" class="active">トップ画面</a>
+      <a href="profile.html">わたし</a>
+      <a href="nikki.html">日記</a>
+      <a href="e.html">絵</a>
+      <a href="sonota.html">その他</a>
+      <a href="rennraku.html">ご連絡</a>
+      <a href="admin.html">管理権限</a>
+  </div>
 
-if (input !== password) {
-  alert("パスワードが違います");
-  window.location.href = "nikki.html"; // 閲覧ページに戻す
-}
-
-  </script>
-
-  <script type="module">
-    // Firebase の設定
-    const firebaseConfig = {
-      apiKey: "AIzaSyAqLmoaG4B7Z9ahTcdqIBlbkM3RABMllRI",
-      authDomain: "xdiary-project-c16de.firebaseapp.com",
-      projectId: "diary-project-c16de",
-      storageBucket: "diary-project-c16de.firebasestorage.app",
-      messagingSenderId: "1024852965954",
-      appId: "1:1024852965954:web:80b3d9ffe5fecc58c78bdb"
-    };
-
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { 
-      getFirestore, collection, addDoc, getDocs, orderBy, query,
-      doc, updateDoc, deleteDoc
-    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    let editId = null; // 編集中のIDを保存
-
-    // ▼ 投稿 or 更新処理
-    document.getElementById("submit").addEventListener("click", async () => {
-      const text = document.getElementById("text").value;
-
-      if (!text.trim()) {
-        alert("日記が空です");
-        return;
-      }
-
-      if (editId) {
-        // ▼ 編集モード
-        const docRef = doc(db, "diary", editId);
-        await updateDoc(docRef, {
-          content: text,
-          date: new Date()
-        });
-
-        alert("更新しました！");
-        editId = null;
-        document.getElementById("submit").textContent = "投稿";
-
-      } else {
-        // ▼ 新規投稿
-        await addDoc(collection(db, "diary"), {
-          content: text,
-          date: new Date()
-        });
-
-        alert("投稿しました！");
-      }
-
-      document.getElementById("text").value = "";
-      loadDiary();
-    });
-
-    // ▼ 編集処理
-    window.editDiary = function(id, content) {
-      document.getElementById("text").value = content;
-      editId = id;
-      document.getElementById("submit").textContent = "更新";
-    };
-
-    // ▼ 削除処理
-    window.deleteDiary = async function(id) {
-      if (!confirm("本当に削除しますか？")) return;
-
-      const docRef = doc(db, "diary", id);
-      await deleteDoc(docRef);
-
-      alert("削除しました！");
-      loadDiary();
-    };
-
-    // ▼ 日記を読み込んで表示する処理
-    async function loadDiary() {
-      const diaryRef = collection(db, "diary");
-      const q = query(diaryRef, orderBy("date", "desc"));
-      const querySnapshot = await getDocs(q);
-
-      let html = "";
-      querySnapshot.forEach((docItem) => {
-        const data = docItem.data();
-        const date = data.date.toDate().toLocaleString();
-        const id = docItem.id;
-
-        html += `
-          <div class="entry">
-            <p><strong>${date}</strong></p>
-            <p>${data.content}</p>
-
-            <button onclick="editDiary('${id}', \`${data.content.replace(/`/g, "\\`")}\`)">編集</button>
-            <button onclick="deleteDiary('${id}')">削除</button>
-
-            <hr>
-          </div>
-        `;
-      });
-
-      document.getElementById("list").innerHTML = html;
-    }
-
-    // 初回読み込み
-    loadDiary();
-  </script>
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-<script src="tab.js">
-</script>
-<div class="sidebar" id="sidebar">
-
-    <a href="index.html"class="active">トップ画面</class>
-    <a href="profile.html">わたし</a>
-    <a href="nikki.html">日記</a>
-    <a href="e.html">絵</a>
-    <a href="sonota.html">その他</a>
-    <a href="rennraku.html">ご連絡</a>
-    <a href="admin.html">管理権限</a>
-</div>
+  <!-- ★★★ nikki.js は必ず最後に読み込む ★★★ -->
+  <script type="module" src="nikki.js"></script>
 
 </body>
 </html>

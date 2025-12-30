@@ -3,74 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="nikki.css">
-  <title>日記</title>
+  <title>日記（閲覧）</title>
+
+  <style>
+    /* 閲覧専用ページでは編集・削除ボタンを隠す */
+    .entry button {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-  <h2>日記（閲覧用）</h2>
+  <h2>日記（閲覧専用）</h2>
 
   <div id="list"></div>
 
-  <script type="module">
-    // Firebase の設定
-    const firebaseConfig = {
-      apiKey: "AIzaSyAqLmoaG4B7Z9ahTcdqIBlbkM3RABMllRI",
-      authDomain: "xdiary-project-c16de.firebaseapp.com",
-      projectId: "diary-project-c16de",
-      storageBucket: "diary-project-c16de.firebasestorage.app",
-      messagingSenderId: "1024852965954",
-      appId: "1:1024852965954:web:80b3d9ffe5fecc58c78bdb"
-    };
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <script src="tab.js"></script>
 
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { 
-      getFirestore, collection, getDocs, orderBy, query
-    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+  <div class="sidebar" id="sidebar">
+      <a href="index.html">トップ画面</a>
+      <a href="profile.html">わたし</a>
+      <a href="nikki.html">日記</a>
+      <a href="e.html">絵</a>
+      <a href="sonota.html">その他</a>
+      <a href="rennraku.html">ご連絡</a>
+      <a href="admin.html">管理権限</a>
+  </div>
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+  <!-- ★ nikki.js をそのまま読み込むだけ ★ -->
+  <script type="module" src="view_nikki.js"></script>
 
-    
-    // ▼ 日記を読み込んで表示する処理
-    async function loadDiary() {
-      const diaryRef = collection(db, "diary");
-      const q = query(diaryRef, orderBy("date", "desc"));
-      const querySnapshot = await getDocs(q);
-
-      let html = "";
-      querySnapshot.forEach((docItem) => {
-        const data = docItem.data();
-        const date = data.date.toDate().toLocaleString();
-
-        html += `
-          <div class="entry">
-            <p><strong>${date}</strong></p>
-            <p>${data.content}</p>
-            <hr>
-          </div>
-        `;
-      });
-
-      document.getElementById("list").innerHTML = html;
-    }
-
-    loadDiary();
-  </script>
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-<div class="sidebar" id="sidebar">
-
-    <a href="index.html"class="active">トップ画面</class>
-    <a href="profile.html">わたし</a>
-    <a href="nikki.html">日記</a>
-    <a href="e.html">絵</a>
-    <a href="sonota.html">その他</a>
-    <a href="rennraku.html">ご連絡</a>
-    <a href="admin.html">管理権限</a>
-    <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
-</div>
-<script src="tab.js">
-</script>
 </body>
 </html>

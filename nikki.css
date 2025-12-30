@@ -2,7 +2,11 @@ body {
     background-color: #dbdbdb;
     color: rgb(0, 0, 0);
     font-family: "DotGothic16", sans-serif;
+    width: 100%;
 
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
 }
 
 h2,p,button{
@@ -66,10 +70,69 @@ h2,p,button{
 
 
   .entry {
-    background: rgb(255, 255, 255); /* うっすら白 */
-    border: 1px solid rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255,0.85); /* うっすら白 */
+    border: 1px solid #444;
     padding: 1.2em;
-    margin: 1.5em 0;
+    margin: 0px 0;/*上下0px左右0*/
     border-radius: 6px;
+    width: 600px;
+    max-width: 800px;
+
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    backdrop-filter: blur(2px);
+  
+    /*日付まとめ*/
+    margin-bottom: 20px;
+    border-left: 3px solid #888;
+  }
+
+  .entry p {
+    line-height 22px;; /* 行間 */
+
+  }
+
+  .entry p:first-child {
+    line-height: 1.1;   /* 行間を詰める */
+    margin-bottom: 2px; /* 下の余白を小さく */
+    margin-top: 0;       /* 上の余白をゼロに */
   }
   
+
+  #list{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央寄せ */
+  
+  }
+
+  /*日付まとめ2*/
+  .date-group {
+    margin-bottom: 40px;
+
+  }
+  
+  .date-group h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+  }
+  
+
+  
+  /*管理用ページ用*/
+  textarea#text {
+    width: 75%;
+    max-width: 800px;/*広すぎ防止*/
+    height: 250px;
+    padding: 15px;
+    line-height: 1.6;/* 行間ゆったり */
+    box-sizing: border-box;
+    resize: vertical;/* 高さだけ手動で伸ばせる */
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  #text,#submit{
+    margin-bottom: 20px;
+  }
