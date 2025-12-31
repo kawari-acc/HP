@@ -1,0 +1,109 @@
+/* 共通設定 */
+.scroll-bg {
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-image: url("images/lacename.png");
+    background-repeat: repeat-y;
+    background-size: 75px auto;
+    animation: scroll-lace 20s linear infinite; /* 名前を変える */
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* 右側 */
+.scroll-bg.right {
+    right: 0;
+    width: 75px;
+    background-size: 75px auto;
+    background-position: right top;
+    transform: rotate(180deg);
+    transform-origin: center;
+}
+
+/* 左側 */
+.scroll-bg.left {
+    left: 0;
+    width: 75px;
+    background-size: 75px auto;
+    background-position: left top;
+}
+
+/*スクロール量 */
+@keyframes scroll-lace {
+    from {
+        background-position-y: 0;
+      }
+      to {
+        background-position-y: -5000px; /* ← 縮小後の高さに合わせる */
+      }
+    }
+    
+  
+  
+
+
+
+.bg-half {
+    right: -30vw;            /* 右側に固定（left にすれば左側） */
+    background-image: url("images/Ayami_1.png");
+  }
+  .bg-half2 {
+    left: -25vw;            /* 右側に固定（left にすれば左側） */
+    background-image: url("images/Ayami_4.png");
+  }
+  .bg-half,.bg-half2{
+    position: fixed;
+    top: 0;              /* 上端に固定（好きに変えられる） */
+    width: 70vw;         /* 画面の半分の幅だけ表示 */
+    height: 100vh;       /* 画面の高さに合わせる */
+    background-size: cover;     /* 画像を全体にフィット */
+    background-position: center; /* 中央を見せる */
+    background-repeat: center;
+    pointer-events: none;        /* クリックを邪魔しない */
+    z-index: -1;                 /* 背景として後ろに置く */
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  /*ボタン*/
+  .btn1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #111;
+    color: #0f0;
+    border: 2px solid #0f0;
+    font-family: "DotGothic16", sans-serif;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.2s;
+  }
+
+  .btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .btn1:hover {
+    background: #0f0;
+    color: #111;
+    box-shadow: 0 0 8px #0f0;
+
+  }
+  
+  .btn-wrap {
+    text-align: center;
+    margin: 18px 0;
+  }
+  
+  .btn-desc {
+    font-size: 14px;
+    color: #ff4444;
+    text-shadow: 0 0 6px #ff0000;
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }

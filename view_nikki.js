@@ -69,8 +69,8 @@ async function loadDiary() {
     grouped[dateKey].forEach((item) => {
       html += `
         <div class="entry">
-          <p><strong>${item.fullDate}</strong></p>
           <p>${item.content}</p>
+          <span class="time">${item.fullDate}</span>
         </div>
       `;
     });

@@ -4,21 +4,44 @@
 <head>
 　<meta charset="UTF-8">
 　<meta name="viewport" content="width=device-width, initial-scale=1.0">
+　<link rel="stylesheet" href="back.css">
 　<link rel="stylesheet" href="tab.css">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 　<title>かわり</title>
 </head>
 
 <body>
-<div id="content">
-　<h2>代わり</h2>
-　<p>代わりのホームページです.<br>手作り感満載ですが面白がってください.<br>各ページは左をタップだよ～</p>
-<img src="title.png" alt="タイトル画像は表示されていません"class="title-img">
+    <div class="scroll-bg left"></div>
+    <div class="scroll-bg right"></div>
+    <div id="content">
 
-<a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
+        <img src="images/titleimage.png" alt="タイトル画像は表示されていません" class="title-img">
+      
+        <p>
+          代わりのホームページです.<br>
+          手作り感満載ですが面白がってください.<br>
+          各ページは左をタップだよ～
+        </p>
+      
+        <!-- pixiv ボタン＋説明 -->
+        <div class="btn-row">
+            <div class="btn-wrap">
+              <a href="https://www.pixiv.net/users/117084566" target="_blank" class="btn1">pixiv</a>
+              <p class="btn-desc">絵が見れる</p>
+            </div>
+          
+            <div class="btn-wrap">
+              <a href="https://X.com/kawariACC" target="_blank" class="btn1">旧Twitter</a>
+              <p class="btn-desc">日常<br>(あまり使わない)</p>
+            </div>
+          
+            <div class="btn-wrap">
+              <a href="https://kawari.booth.pm/" target="_blank" class="btn1">booth</a>
+              <p class="btn-desc">作品販売<br>(準備中)</p>
+            </div>
+          </div>
 
-
-</div>
+      <img src="title.png" alt="タイトル画像は表示されていません" class="title-img">
 
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
@@ -27,18 +50,23 @@
     <a href="index.html"class="active">トップ画面</class>
     <a href="profile.html">わたし</a>
     <a href="nikki.html">日記</a>
-    <a href="e.html">絵</a>
+    <a href="e.html">作品について</a>
     <a href="sonota.html">その他</a>
     <a href="rennraku.html">ご連絡</a>
     <a href="admin.html">管理権限</a>
     <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
 </div>
 
-<a href="https://example.com" target="_blank">
+<a target="_blank">
     <img src="banner.jpg" alt="バナー" class="banner">
+    <p style="color: red;">広告バナー風です.<br>ホームページを装っています.</p>
   </a>
 
 
+  <p style="text-align: right;">開設日(index.html作成):2025/12/26 12:23:30</p>
+
+  <div class="bg-half"></div>
+  <div class="bg-half2"></div>
 <script src="tab.js">
 </script>
 <script>

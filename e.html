@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
+    　<link rel="stylesheet" href="tab.css">
 <head>
   <meta charset="UTF-8">
   <title>絵</title>
 </head>
 <body>
-    <div class="sidebar">
-        <a href="index.html">トップ</a>
+    <div class="sidebar" id="sidebar">
+
+        <a href="index.html"class="active">トップ画面</class>
+        <a href="profile.html">わたし</a>
         <a href="nikki.html">日記</a>
-        <a href="admin.html">管理ページ</a>
-      </div>
+        <a href="e.html">作品について</a>
+        <a href="sonota.html">その他</a>
+        <a href="rennraku.html">ご連絡</a>
+        <a href="admin.html">管理権限</a>
+        <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
+    </div>
       
-  <h2>Gallery</h2>
-  <p>ここに絵を貼ります</p>
+  <h2>作品</h2>
+  <p>安心する作品を作るのが趣味です.
+    <br>昔からなんか怖いと言われるのでホラー路線を売りにする事にしました.
+    <br>ぼんやり楽しんでください.</p>
+
+    <div class="img-Aya">
+
+  <img src="images/Ayami_1.png">
+  <img src="images/Ayami_3.png">
+  <img src="images/Ayami_4.png">
+    </div>
+
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button> 
+  <div class="sidebar" id="sidebar">
+
+    <a href="index.html"class="active">トップ画面</class>
+    <a href="profile.html">わたし</a>
+    <a href="nikki.html">日記</a>
+    <a href="e.html">絵</a>
+    <a href="sonota.html">その他</a>
+    <a href="rennraku.html">ご連絡</a>
+    <a href="admin.html">管理権限</a>
+    <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
+</div>
+<script src="tab.js">
+</script>
+
 </body>
 </html>

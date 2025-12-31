@@ -2,9 +2,9 @@ body {
     background-color: #dbdbdb;
     color: rgb(0, 0, 0);
     font-family: "DotGothic16", sans-serif;
-    width: 100%;
+    /*width: 100%;
 
-    display: flex;
+    display: flex;*/
     flex-direction: column;  
     align-items: center;
 }
@@ -16,6 +16,15 @@ h2,p,button{
   h2 {
     color: #000000; /* 好きな色に変更 */
   }
+  
+  .date-group h3 {
+    text-align: center;/*日付title中央*/
+    font-family: "DotGothic16", sans-serif;
+    color: rgb(20, 20, 20);
+    margin-bottom: 10px;
+    
+  }
+  
 
 /* メニューボタン */
 .menu-btn {
@@ -83,10 +92,15 @@ h2,p,button{
     /*日付まとめ*/
     margin-bottom: 20px;
     border-left: 3px solid #888;
+
+    /*時刻が右下に小さくなるように*/
+  position: relative;
+  padding-bottom: 20px; /* 時刻が重ならないように余白 */
   }
+  
 
   .entry p {
-    line-height 22px;; /* 行間 */
+    line-height 22px; /* 行間 */
 
   }
 
@@ -105,6 +119,16 @@ h2,p,button{
     align-items: center; /* 中央寄せ */
   
   }
+
+  /*時刻を右下*/
+  .time {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 12px;
+    color: #888;
+  }
+  
 
   /*日付まとめ2*/
   .date-group {
