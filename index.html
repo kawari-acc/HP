@@ -2,12 +2,12 @@
 <html lang="ja">
     
 <head>
-　<meta charset="UTF-8">
-　<meta name="viewport" content="width=device-width, initial-scale=1.0">
-　<link rel="stylesheet" href="back.css">
-　<link rel="stylesheet" href="tab.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="back.css">
+<link rel="stylesheet" href="tab.css">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-　<title>かわり</title>
+<title>かわり</title>
 </head>
 
 <body>
@@ -46,8 +46,7 @@
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
 <div class="sidebar" id="sidebar">
-
-    <a href="index.html"class="active">トップ画面</class>
+    <a href="index.html"class="active">トップ画面</a>
     <a href="profile.html">わたし</a>
     <a href="nikki.html">日記</a>
     <a href="e.html">作品について</a>
@@ -67,8 +66,7 @@
 
   <div class="bg-half"></div>
   <div class="bg-half2"></div>
-<script src="tab.js">
-</script>
+
 <script>
     setInterval(() => {
     　const content = document.getElementById("content");
@@ -78,8 +76,9 @@
       }, 250); // 揺れが終わったらクラスを外す
     }, 8000); // 5秒ごとに揺れる
 </script>
-</body>
 
+<script type="module" src="counter.js"></script>
 
-  
+<script src="tab.js"></script>
+</body> 
 </html>

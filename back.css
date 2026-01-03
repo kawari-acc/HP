@@ -2,14 +2,14 @@
 .scroll-bg {
     position: fixed;
     top: 0;
-    width: 200px;
+    width: 75px;
     height: 100vh;
     background-image: url("images/lacename.png");
     background-repeat: repeat-y;
     background-size: 75px auto;
-    animation: scroll-lace 20s linear infinite; /* 名前を変える */
+    animation: scroll-lace 20s linear infinite; 
     pointer-events: none;
-    z-index: 1;
+    z-index: -1;
 }
 
 
@@ -63,7 +63,7 @@
     background-position: center; /* 中央を見せる */
     background-repeat: center;
     pointer-events: none;        /* クリックを邪魔しない */
-    z-index: -1;                 /* 背景として後ろに置く */
+    z-index: -2;                 /* 背景として後ろに置く */
     opacity: 0.25;
     pointer-events: none;
   }
