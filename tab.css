@@ -17,6 +17,33 @@ body {
   padding-left: 20px; /* 必要なら調整 */
 }
 
+/*いらっしゃいませ*/
+.Aisathu {
+  font-size: 24px;
+  font-family: "DotGothic16", sans-serif;
+  font-weight: bold;
+  animation: swapColors 0.4s infinite alternate,blink 0.1s infinite;
+
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* 2色の切り替えアニメーション */
+@keyframes swapColors {
+  0% {
+    color: #ff0000; /* 蛍光マゼンタ */
+    text-shadow: 0 0 8px #ff0000;
+  }
+  100% {
+    color: #00ff0d; /* 蛍光シアン */
+    text-shadow: 0 0 8px #00ff0d;
+  }
+}
+
+
+
 /*ホラー風加工フィルター*/
 body::before {
   content: "";
@@ -40,6 +67,65 @@ body::before {
   80%  { transform: translate(10px, 1px) skew(-1deg, -1deg); }
   100% { transform: translate(0, 0) skew(0deg, 0deg); }
 }
+
+
+/*点滅エフェクト*/
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+  color: #f0f;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+/*点滅エフェクト2*/
+.blink2 {
+  animation: blink 0.2s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+/*見えないメッセージ*/
+.hidden-msg {
+  position: fixed;
+  bottom: 4px;
+  right: 8px;
+  opacity: 0.2;
+  font-size: 3px;
+}
+
+/*壊れたリンク1*/
+.broken1 {
+  color: #ff0000;
+  text-align: center;
+}
+
+/*壊れたリンク*/
+.broken {
+  color: #bbff00;
+  text-decoration: line-through;
+  cursor: not-allowed;
+  text-align: center;
+}
+.Nu {
+  text-align: center;
+}
+
+
+
+
+/*ランダムな色*/
+.char {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+  font-family: "DotGothic16", sans-serif;
+  text-shadow: 0 0 6px currentColor, 0 0 12px currentColor;
+}
+
 
 #content.shake {
   animation: screen-shake-distort 0.1s ease-in-out;
