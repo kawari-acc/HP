@@ -4,6 +4,8 @@ body {
     font-family: "DotGothic16", sans-serif;
     cursor: url("https://cur.cursors-4u.net/cursors/cur-2/cur117.cur"), auto;/*本文カーソル*/
 
+    filter: blur(1,2px) contrast(180%) saturate(150%);
+    image-rendering: pixelated;
 }
 
 .content {
