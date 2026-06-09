@@ -1,0 +1,73 @@
+/* ボタンの塊を画面全体に対して自由に配置できるようにする */
+.btn-row {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* ふわふわ動く全体の範囲の高さ */
+  overflow: hidden;
+}
+
+/* 個々のボタンを絶対配置にして、ふわふわアニメーションをかける */
+.btn-wrap {
+  position: absolute;
+  animation: fuwafuwa 6s ease-in-out infinite alternate;
+  cursor: grab; /* 普段は「掴めるよ」という手のマーク */
+  user-select: none; /* ドラッグ中に文字が選択されて青くなるのを防ぐ */
+}
+
+/* 掴んでいる最中のスタイル */
+.btn-wrap:active {
+  cursor: grabbing; /* 掴んでいる間は「握り拳」のマーク */
+  animation-play-state: paused; /* ドラッグ中はふわふわアニメーションを一時停止 */
+}
+
+/* 2つ目、3つ目のボタンの揺れ方に変化をつける（単調にしない） */
+.btn-wrap:nth-child(2n) {
+  animation-duration: 8s;
+  animation-delay: -2s;
+}
+.btn-wrap:nth-child(3n) {
+  animation-duration: 7s;
+  animation-delay: -4s;
+}
+
+/* ふわふわ揺れるアニメーションの動き */
+@keyframes fuwafuwa {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10px, -15px) rotate(3deg);
+  }
+  100% {
+    transform: translate(-10px, -30px) rotate(-3deg);
+  }
+}
+
+
+/*戻るボタン*/
+.back-home-btn {
+  position: fixed;     /* 画面の左上に常に固定する設定 */
+  top: 15px;           /* 上からの隙間 */
+  left: 15px;          /* 左からの隙間 */
+  z-index: 9999;       /* 他の要素（ふわふわするボタンなど）より一番上に表示する */
+  
+  /* ボタンのデザイン（お好みの色に変えてください） */
+  background-color: #ffffff; 
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 5px 10px;
+  font-family: 'DotGothic16', sans-serif; /* ドットフォントを適用 */
+  text-decoration: none; /* リンクの下線を消す */
+  font-size: 14px;
+  
+  /* ちょっとした手作り感を出すための影 */
+  box-shadow: 2px 2px 0px #000000;
+  transition: all 0.1s;
+}
+
+/* ボタンにマウスが乗ったとき（触ったとき）の動き */
+.back-home-btn:hover {
+  background-color: #ffee00; /* マウスが乗ると黄色くなる */
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #000000;
+}

@@ -1,0 +1,145 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="back.css">
+<link rel="stylesheet" href="tab.css">
+<link rel="stylesheet" href="linl.css">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<title>リンク倉庫</title>
+</head>
+<body>
+    <a href="index.html" class="back-home-btn">← 戻る</a>
+
+<p class="Aisathu">
+リンク倉庫<br>
+リンクが乱雑に置かれています。<br>
+</p>
+<p>範囲広げ過ぎて管理できてない(´；ω；`)<br>摘まむと動かせる</p>
+
+        <div class="btn-row">
+            <div class="btn-wrap">
+              <a href="https://www.pixiv.net/users/117084566" target="_blank" class="btn1">pixiv</a>
+              <p class="btn-desc">絵がある</p>
+            </div>
+          
+            <div class="btn-wrap">
+              <a href="https://xfolio.jp/en/portfolio/kawari" target="_blank" class="btn1">xfolio</a>
+              <p class="btn-desc">ポートフォリオ</p>
+            </div>
+
+            <div class="btn-wrap">
+              <a href="https://kawari.booth.pm" target="_blank" class="btn1">booth</a>
+              <p class="btn-desc">販売</p>
+            </div>
+
+            <div class="btn-wrap">
+              <a href="https://marshmallow-qa.com/me" target="_blank" class="btn1">ましゅまろ</a>
+              <p class="btn-desc">質問はここから</p>
+            </div>
+
+            <div class="btn-wrap">
+              <a href="https://note.com/kwr_" target="_blank" class="btn1">note</a>
+              <p class="btn-desc">ブログ(の予定だった)</p>
+            </div>
+
+            <div class="btn-wrap">
+              <a href="https://skima.jp/@kawari"target="blank" class="btn1">skeb</a>
+              <p class="btn-desc">基本的に空いてる依頼先</p>
+            </div>
+
+            <div class="btn-wrap">
+              <a href="https://skima.jp/profile?id=4178855&sh=ZF2ctzJ"target="blank" class="btn1">skima</a>
+              <p class="btn-desc">既にご依頼いただいた方のみ対応</p>
+            </div>
+
+            <div class="btn-wrap">
+              <a href="https://youtube.com/channel/UCt4XacKeJaYxn3TuH50LCEA?si=g0LkCFhGjtWFxxpT" target="_blank" class="btn1">youtube</a>
+              <p class="btn-desc">曲。更新してない</p>
+            </div>
+
+        </div>
+</body>
+
+
+<script>
+function setupDraggableButtons() {
+  const buttons = document.querySelectorAll('.btn-wrap');
+  
+  buttons.forEach((btn) => {
+    // 1. 最初はランダムな位置に配置
+    const randomX = Math.floor(Math.random() * 70) + 10;
+    const randomY = Math.floor(Math.random() * 60) + 10;
+    btn.style.left = randomX + '%';
+    btn.style.top = randomY + '%';
+
+    // 2. ドラッグ＆ドロップの処理
+    let isDragging = false;
+    let startX, startY, initialLeft, initialTop;
+
+    // マウス・タッチが押されたとき
+    function startDrag(e) {
+      // リンクをクリックしてすぐ飛んでしまわないように、ドラッグ開始時はリンク移動を一旦防ぐ
+      isDragging = true;
+      
+      // イベントの種類（マウスかタッチか）によって座標の取得方法を変える
+      const pageX = e.type.startsWith('touch') ? e.touches[0].pageX : e.pageX;
+      const pageY = e.type.startsWith('touch') ? e.touches[0].pageY : e.pageY;
+      
+      startX = pageX;
+      startY = pageY;
+      
+      // 現在のボタンの位置を取得（％ではなくpxで計算するため）
+      initialLeft = btn.offsetLeft;
+      initialTop = btn.offsetTop;
+      
+      // ふわふわアニメーションの現在位置を固定するため、位置をpx指定に上書き
+      btn.style.left = initialLeft + 'px';
+      btn.style.top = initialTop + 'px';
+    }
+
+    // 動いているとき
+    function doDrag(e) {
+      if (!isDragging) return;
+      e.preventDefault(); // 画面全体のスクロールを防ぐ
+      
+      const pageX = e.type.startsWith('touch') ? e.touches[0].pageX : e.pageX;
+      const pageY = e.type.startsWith('touch') ? e.touches[0].pageY : e.pageY;
+      
+      // 移動量を計算
+      const deltaX = pageX - startX;
+      const deltaY = pageY - startY;
+      
+      // 新しい位置を反映
+      btn.style.left = (initialLeft + deltaX) + 'px';
+      btn.style.top = (initialTop + deltaY) + 'px';
+    }
+
+    // 手を離したとき
+    function endDrag() {
+      if (!isDragging) return;
+      // 少しでも動かしたら「ドラッグした」とみなす
+      setTimeout(() => { isDragging = false; }, 50);
+    }
+
+    // マウスイベントの登録
+    btn.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', doDrag);
+    document.addEventListener('mouseup', endDrag);
+
+    // タッチイベントの登録（スマホ対応）
+    btn.addEventListener('touchstart', startDrag, { passive: false });
+    document.addEventListener('touchmove', doDrag, { passive: false });
+    document.addEventListener('touchend', endDrag);
+
+    // 【重要】ドラッグしただけでリンクに飛んでしまうのを防ぐ対策
+    btn.querySelector('a').addEventListener('click', (e) => {
+      if (isDragging) {
+        e.preventDefault(); // 移動させただけならリンクを開かない
+      }
+    });
+  });
+}
+
+// 読み込み完了時に実行
+window.addEventListener('DOMContentLoaded', setupDraggableButtons);
+</script>

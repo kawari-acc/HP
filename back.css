@@ -13,7 +13,7 @@
 }
 
 
-/* 右側 */
+右側
 .scroll-bg.right {
     right: 0;
     width: 75px;
@@ -45,28 +45,30 @@
   
 
 
-
+/*
 .bg-half {
-    right: -30vw;            /* 右側に固定（left にすれば左側） */
+    right: -30vw;            /* 右側に固定（left にすれば左側） 
     background-image: url("images/Ayami_1.png");
   }
   .bg-half2 {
-    left: -25vw;            /* 右側に固定（left にすれば左側） */
+    left: -25vw;            /* 右側に固定（left にすれば左側） 
     background-image: url("images/Ayami_4.png");
   }
   .bg-half,.bg-half2{
     position: fixed;
-    top: 0;              /* 上端に固定（好きに変えられる） */
-    width: 70vw;         /* 画面の半分の幅だけ表示 */
-    height: 100vh;       /* 画面の高さに合わせる */
-    background-size: cover;     /* 画像を全体にフィット */
-    background-position: center; /* 中央を見せる */
+    top: 0;              /* 上端に固定（好きに変えられる） *
+    width: 70vw;         /* 画面の半分の幅だけ表示 
+    height: 100vh;       /* 画面の高さに合わせる *
+    background-size: cover;     /* 画像を全体にフィット *
+    background-position: center; /* 中央を見せる *
     background-repeat: center;
-    pointer-events: none;        /* クリックを邪魔しない */
-    z-index: -2;                 /* 背景として後ろに置く */
+    pointer-events: none;        /* クリックを邪魔しない *
+    z-index: -2;                 /* 背景として後ろに置く *
     opacity: 0.25;
     pointer-events: none;
   }
+*/
+  
   /*ボタン*/
   .btn1 {
     display: inline-block;
@@ -107,3 +109,32 @@
     margin-top: 4px;
     letter-spacing: 1px;
   }
+
+
+/*リンク集用css*/
+.links-btn {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #000000; /* 黒背景 */
+  color: #00ff00;            /* ネオングリーン（好みの色に変えてね） */
+  border: 2px dashed #00ff00; /* 点線の枠線 */
+  font-family: 'DotGothic16', sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  
+  /* 手作り感を出すための四角い影 */
+  box-shadow: 4px 4px 0px #aa00ff; /* 紫の影 */
+  transition: all 0.2s;
+}
+
+/* マウスが乗ったとき（触ったとき）のビカビカするエフェクト */
+.links-btn:hover {
+  background-color: #00ff00;
+  color: #000000;
+  border-style: solid;
+  box-shadow: -4px -4px 0px #ff00ff; /* 影の向きと色が変わる */
+  transform: scale(1.05); /* ちょっと大きくなる */
+}
