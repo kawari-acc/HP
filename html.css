@@ -1,0 +1,6 @@
+/*index.htmlページのみに適応するcssを書く*/
+
+header img.logo-img{
+    -o-object-fit: cover;
+    object-fit: cover;
+}

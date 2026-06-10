@@ -1,156 +1,112 @@
 <!DOCTYPE html>
 <html lang="ja">
-    
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="back.css">
-<link rel="stylesheet" href="tab.css">
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-<title>かわり</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>代わり</title>
+    <link rel="stylesheet" href="style.css">
 
+
+
+</html>
 <body>
-    <div class="scroll-bg left"></div>
-    <div class="scroll-bg right"></div>
-    <div id="content">
 
-        <img src="images/titleimage.png" alt="タイトル画像は表示されていません" class="title-img">
-
- 
-        <p class="Aisathu">★ いらっしゃいませ ★</p>
-
-        <p>
-          代わりの個人サイトです!<br>
-          手作り感とバグが過多ですが危険はないです!<br>
-          ※左上ボタンのリンク先はバグにより削除済<br>
-        </p>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo-area">
       
+      <a href="index.html" class="logo-link">
+       <img src="images/logo.png" alt="Kawari">
+</a>
+    </div>
+    <nav class="site-nav">
+      <a href="https://www.pixiv.net/users/117084566" class="nav-link">pixiv</a>
+      <a href="https://kawari.booth.pm/" class="nav-link">booth</a>
+      <a href="#" class="nav-link">その他</a>
+    </nav>
+  </header>
 
-        <!-- pixiv ボタン＋説明 -->
-        <div class="btn-row">
-            <div class="btn-wrap">
-              <a href="https://www.pixiv.net/users/117084566" target="_blank" class="btn1">pixiv</a>
-              <p class="btn-desc">絵</p>
-            </div>
-          
-            <div class="btn-wrap">
-              <a href="https://X.com/kawari-aya" target="_blank" class="btn1">旧Twitter</a>
-              <p class="btn-desc">日常<br>壁打ち</p>
-            </div>
-          
-            <div class="btn-wrap">
-              <a href="https://X.com/kawariACC" target="_blank" class="btn1">bluesky</a>
-              <p class="btn-desc">日常<br>(適当に喋ってる)</p>
-            </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-image-wrap">
+    <img src="images/firstimage.png" alt="kawari illustration" class="hero-img">
+      <span class="hero-signature">kawari.jp</span>
+    </div>
+  </section>
 
-            <div class="btn-wrap">
-              <a href="https://kawari.booth.pm/" target="_blank" class="btn1">booth</a>
-              <p class="btn-desc">作品販売</p>
-            </div>
-          </div>
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
 
-          <a href="link.html" class="links-btn">リンク倉庫。全部おいてある</a>
+    <!-- LEFT: information + about -->
+    <div class="left-col">
+      <section class="info-section">
+        <h2 class="section-title">information</h2>
+        <div class="divider"></div>
+        <ul class="info-list">
+          <li><span class="info-date">#</span> #</li>
+          <li><span class="info-date">#</span> #</li>
+          <li><span class="info-date">2026/06/10</span> ブログを作り始めました</li>
+        </ul>
+        <div class="divider"></div>
+      </section>
 
-<p class="blink">※とてもHAPPY!<br>改装中です！</p>
+      <section class="about-section">
+        <h2 class="section-title">About</h2>
+        <div class="divider"></div>
+        <div class="about-text">
+          <p>一次創作者</p>
+          <p>感情の映らないかわいい作品が好き</p>
+          <p>無性別的な男性も好き</p>
+          <p>代表OC：アヤミ　ジュン</p>
+        </div>
+        <div class="divider"></div>
+      </section>
+
+      <!-- キャラクターイラスト（左下） -->
+      <div class="char-left">
+        <img src="images/" alt="工事中" class="char-img">
+      </div>
+    </div>
+
+    <!-- RIGHT: circle info -->
+    <div class="right-col">
+      <section class="circle-section">
+        <h2 class="section-title">Circle info.</h2>
+        <p class="circle-name">【代々葬儀屋】</p>
+        <div class="char-right">
+          <img src="images/c1.png" alt="circle character" class="char-img">
+        </div>
+      </section>
+    </div>
+
+  </main>
 
 
-<p id="typeText" data-text="    ｡ﾟﾟ･☆｡･ﾟﾟ｡
-（   ⬩ ω ⬩  ）  ˚         ｡˚~ hello ･｡☆･ﾟ
-"></p>
-
-<p class="hidden-msg">見つけたのですね</p>
-
-<div class="Nu">
-<a href="you" class="broken1">(*'ω'*)</a>
-<a href="#" class="broken">どこにも行けません</a>
-<a href="you" class="broken1">(*'ω'*)</a>
-</div>
-
-      <img src="title.png" alt="タイトル画像は表示されていません" class="title-img">
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-<div class="sidebar" id="sidebar">
-    <a href="index.html"class="active">トップ画面</a>
-    <a href="profile.html">わたし</a>
-    <a href="nikki.html">日記</a>
-    <a href="e.html">作品について</a>
-    <a href="sonota.html">その他</a>
-    <a href="rennraku.html">ご連絡</a>
-    <a href="admin.html">管理権限</a>
-    <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
-</div>
-
-<a target="_blank">
-    <img src="banner.jpg" alt="バナー" class="banner">
-    <p style="color: red;">広告バナー風です.<br>ホームページを装っています.</p>
+<!--フッダー FOOTER NAV -->
+<footer class="footer-nav">
+      <a href="profile.html" class="footer-link">
+    <span class="footer-line"></span>
+    Profile
+    <span class="footer-line"></span>
   </a>
+  <a href="characters.html" class="footer-link">
+    <span class="footer-line"></span>
+    キャラ紹介
+    <span class="footer-line"></span>
+  </a>
+  <a href="blog.html" class="footer-link">
+    <span class="footer-line"></span>
+    ブログ(工事)
+    <span class="footer-line"></span>
+  </a>
+  <a href="contact.html" class="footer-link">
+    <span class="footer-line"></span>
+    お問い合わせ(工事)
+    <span class="footer-line"></span>
+  </a>
+</footer>
 
-
-  <p style="text-align: right;">開設日(index.html作成):2025/12/26 12:23:30</p>
-
-  <div class="bg-half"></div>
-  <div class="bg-half2"></div>
-
-<script>
-    setInterval(() => {
-    　const content = document.getElementById("content");
-      content.classList.add("shake");
-      setTimeout(() => {
-        content.classList.remove("shake");
-      }, 250); // 揺れが終わったらクラスを外す
-    }, 8000); // 5秒ごとに揺れる
-</script>
-
-
-
-<script>//タイプライターランダム
-function typeColorfulText() {
-  const el = document.getElementById("typeText");
-  const text = el.dataset.text;
-  el.innerHTML = ""; // 初期化
-
-  const colors = [
-    "#ff0000", "#ff7b00", "#ffee00",
-    "#00ff00", "#00ffff", "#0066ff",
-    "#aa00ff", "#ff00ff"
-  ];
-
-
-  let i = 0;
-
-  function type() {
-    if (i < text.length) {
-      const span = document.createElement("span");
-      span.textContent = text[i];
-      span.classList.add("char");
-
-      // ランダムカラー
-      span.style.color = colors[Math.floor(Math.random() * colors.length)];
-
-      el.appendChild(span);
-
-      // 少し遅れてフェードイン
-      setTimeout(() => {
-        span.style.opacity = 1;
-      }, 20);
-
-      i++;
-      setTimeout(type, 80); // ← 速度調整（小さいほど速い）
-    }
-  }
-
-  type();
-}
-
-typeColorfulText();
-</script>
-
-
-
-<script type="module" src="counter.js"></script>
-
-<script src="tab.js"></script>
-</body> 
+</body>
 </html>
