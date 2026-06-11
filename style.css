@@ -35,7 +35,7 @@ body {
   line-height: 1.9;/*行間*/
   min-height: 100vh;/*bodyの最小高さ100%*/
 
-  padding-bottom: 80px; /*フッダー分*/
+  padding-bottom: 38px; /*フッダー分*/
 }
 
 /* --- Header --- */
@@ -56,17 +56,17 @@ body {
   font-size: 22px;
   letter-spacing: 0.12em;
   color: #fff;
-  /* ロゴ画像がある場合はこのdivを非表示にしてください */
+  /* ロゴ画像がある場合はこのdivを非表示 */
 }
 
 .logo-area img {
-  height: 75px;
+  height: 50px;
   width: auto;
 }
 
 .site-nav {
   display: flex;
-  gap: 36px;
+  gap: 36px;/*要素と要素の間*/
 }
 
 .nav-link {
@@ -315,7 +315,7 @@ body {
   justify-content: center;
   gap: 0;
   border-top: 2px solid var(--accent);
-  padding: 28px 0 36px;
+  padding: 10px 0 20px;
   margin-top: 40px;
 
 /*下部に固定*/
@@ -337,11 +337,11 @@ body {
   font-family: var(--font-ja);
   font-size: 12px;/*文字サイズ*/
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.0em;/*0.1➤0.0*/
   color: #fff;
   text-decoration: none;
   transition: color 0.25s;
-  padding: 0 8px;
+  padding: 0 0px;
 }
 
 .footer-link:hover {
