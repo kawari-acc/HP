@@ -235,10 +235,27 @@ body {
 
 /* --- Right column --- */
 .right-col {
+
+  width: 60%;  /* 狭い方 */
+    text-align: center;
   padding-left: 16px;
+  border: 1px double var(--accent2);
+  background-color: #353535;
+  margin: auto; 
 }
 
-.circle-section {
+.right-col a,
+.right-col a:visited {
+  color: white;
+}
+
+.right-col li {
+  list-style: none;
+  padding: 0;  /* 左の余白も消す */
+  margin: 0;
+}
+
+.link-section {
   text-align: center;
 }
 
