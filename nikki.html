@@ -2,39 +2,37 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="nikki.css">
-  <title>日記（閲覧）</title>
-
-  <style>
-    /* 閲覧専用ページでは編集・削除ボタンを隠す */
-    .entry button {
-      display: none;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日記</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Kawari">
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="メインメニュー">
+      <a href="index.html" class="nav-link">ホーム</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="characters.html" class="nav-link">OC</a>
+      <a href="links.html" class="nav-link">リンク</a>
+    </nav>
+  </header>
 
-  <h2>日記（※工事中）</h2>
+  <main class="simple-page">
+    <h1 class="page-title">日記</h1>
+    <div class="divider"></div>
+    <p>※工事中です。</p>
+    <p>日記機能は、投稿データや表示用スクリプトを用意してから公開すると安定します。</p>
+  </main>
 
-  <div id="list"></div>
-
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  <script src="tab.js"></script>
-
-  <div class="sidebar" id="sidebar">
-
-    <a href="index.html"class="active">トップ画面</class>
-    <a href="profile.html">わたし</a>
-    <a href="nikki.html">日記</a>
-    <a href="e.html">作品について</a>
-    <a href="sonota.html">その他</a>
-    <a href="rennraku.html">ご連絡</a>
-    <a href="admin.html">管理権限</a>
-    <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
-</div>
-
-
-  <script type="module" src="view_nikki.js"></script>
-
+  <footer class="footer-nav">
+    <a href="profile.html" class="footer-link"><span class="footer-line"></span>Profile<span class="footer-line"></span></a>
+    <a href="characters.html" class="footer-link"><span class="footer-line"></span>キャラ紹介<span class="footer-line"></span></a>
+    <a href="nikki.html" class="footer-link"><span class="footer-line"></span>日記<span class="footer-line"></span></a>
+    <a href="links.html" class="footer-link"><span class="footer-line"></span>リンク集<span class="footer-line"></span></a>
+  </footer>
 </body>
 </html>
