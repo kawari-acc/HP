@@ -1,108 +1,74 @@
 <!DOCTYPE html>
 <html lang="ja">
-    
 <head>
-　<meta charset="UTF-8">
-　<meta name="viewport" content="width=device-width, initial-scale=1.0">
-　<link rel="stylesheet" href="tab.css">
-　<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-　<title>Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo-area">
-      
       <a href="index.html" class="logo-link">
-       <img src="images/logo.png" alt="Kawari">
-</a>
+        <img src="images/logo.png" alt="Kawari">
+      </a>
     </div>
-    <nav class="site-nav">
-      <a href="https://www.pixiv.net/users/117084566" class="nav-link">pixiv</a>
-      <a href="https://kawari.booth.pm/" class="nav-link">booth</a>
-      <a href="#" class="nav-link">その他</a>
+    <nav class="site-nav" aria-label="メインメニュー">
+      <a href="index.html" class="nav-link">ホーム</a>
+      <a href="profile.html" class="nav-link nav-active">Profile</a>
+      <a href="characters.html" class="nav-link">OC</a>
+      <a href="links.html" class="nav-link">リンク</a>
     </nav>
   </header>
 
+  <main class="simple-page">
+    <h1 class="page-title">Profile</h1>
+    <div class="divider"></div>
+    <p>ぬ<br>('ω')</p>
+    <p><img src="images/icon.jpg" alt="アイコン" class="char-img"></p>
 
-<div id="content">
-　<h2>Profile</h2>
-　<p>
-    ぬ
-    <br>('ω')</p>
-<img src="images/icon.jpg" alt="アイコンは表示されていません"class="icon-img">
+    <section class="about-section">
+      <h2 class="section-title">HN</h2>
+      <div class="divider"></div>
+      <p>代わり(かわり)</p>
+    </section>
 
-<div class="box">
-    HN
-</div>
-<p>
-    代わり(かわり)<br><br>
-</p>
+    <section class="about-section">
+      <h2 class="section-title">情報</h2>
+      <div class="divider"></div>
+      <p>誕生日:6月7日<br>所在:愛知<br>性別・年齢:明言しません<br>本業:工学関係</p>
+    </section>
 
-<div class="box">
-    情報
-</div>
-<p>
-    誕生日:6月7日<br>所在:愛知<br>性別・年齢:明言しません<br>本業:工学関係<br><br>
-</p>
+    <section class="about-section">
+      <h2 class="section-title">ほむぺを作った理由</h2>
+      <div class="divider"></div>
+      <p>人目が多い場所を避け、個人サイトを作ってみました。</p>
+    </section>
 
-<div class="box">
-    ほむぺを作った理由
-</div>
-<p>
-    人目が多い場所を避け,個人サイトを作ってみました.<br><br>
-</p>
+    <section class="about-section">
+      <h2 class="section-title">HNについて</h2>
+      <div class="divider"></div>
+      <p>たくさんHNがあります。<br>それらの代わりにこのアカウント名をつけました。</p>
+    </section>
 
-<div class="box">
-    HNについて
-</div>
-<p>
-    たくさんHNがあります.<br>それらの代わりにこのアカウント名をつけました.<br><br>
-</p>
+    <section class="about-section">
+      <h2 class="section-title">意気込み</h2>
+      <div class="divider"></div>
+      <p>私の作品を好きになってくださった方や見てくださる方に失礼の無いような安定した活動をしたいです。</p>
+    </section>
 
-<div class="box">
-    意気込み
-</div>
-<p>
-    私の作品を好きになってくださった方や見てくださる方に失礼の無いような安定した活動をしたいです.<br><br>
-</p>
+    <section class="about-section">
+      <h2 class="section-title">ご連絡先</h2>
+      <div class="divider"></div>
+      <p>以下にご連絡ください。酷いものは対応しません。<br>kawarigawari2@gmail.com</p>
+    </section>
+  </main>
 
-<div class="box">
-    ご連絡先
-</div>
-<p>
-    以下にご連絡ください。酷いものは対応しません.<br>
-    kawarigawari2@gmail.com
-</p>
-</div>
-<!-- 
-<button class="menu-btn" onclick="toggleMenu()">☰</button> -->
-
-<!-- <div class="sidebar" id="sidebar">
-
-    <a href="index.html"class="active">トップ画面</class>
-    <a href="profile.html">わたし</a>
-    <a href="nikki.html">日記</a>
-    <a href="e.html">作品について</a>
-    <a href="sonota.html">その他</a>
-    <a href="rennraku.html">ご連絡</a>
-    <a href="admin.html">管理権限</a>
-    <a href="https://www.pixiv.net/users/117084566" target="_blank">pixiv</a>
-</div> -->
-<!-- 
-<script src="tab.js">
-</script> -->
-<script>
-    setInterval(() => {
-    　const content = document.getElementById("content");
-      content.classList.add("shake");
-      setTimeout(() => {
-        content.classList.remove("shake");
-      }, 250); // 揺れが終わったらクラスを外す
-    }, 8000); // 8秒ごとに揺れる
-</script>
+  <footer class="footer-nav">
+    <a href="profile.html" class="footer-link"><span class="footer-line"></span>Profile<span class="footer-line"></span></a>
+    <a href="characters.html" class="footer-link"><span class="footer-line"></span>キャラ紹介<span class="footer-line"></span></a>
+    <a href="nikki.html" class="footer-link"><span class="footer-line"></span>日記<span class="footer-line"></span></a>
+    <a href="links.html" class="footer-link"><span class="footer-line"></span>リンク集<span class="footer-line"></span></a>
+  </footer>
 </body>
 </html>
