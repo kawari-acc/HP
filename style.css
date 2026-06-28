@@ -382,3 +382,16 @@ img { max-width: 100%; }
   .footer-link,
   .btn1 { transition: none; }
 }
+
+
+.footer-disabled,
+.nav-disabled {
+  color: var(--text2);
+  cursor: default;
+  pointer-events: none;
+}
+
+.footer-disabled:hover,
+.nav-disabled:hover {
+  color: var(--text2);
+}
