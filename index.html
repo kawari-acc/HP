@@ -1,66 +1,49 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: http://ogp.me/ns#">
-
 <head>
-
-  <meta name="twitter:card" content="summary_large_image"> <!-- content="summary":小型 -->
-<meta property="og:title" content="代わりHP">
-<meta property="og:description" content="ホームページ、見ていってね('ω')">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://kawari.jp/">
-<meta property="og:image" content="https://kawari.jp/images/icons/ogp.png">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="代わりHP">
-<meta name="twitter:description" content="ホームページ、見ていってね('ω')">
-<meta name="twitter:image" content="https://kawari.jp/images/icons/ogp.png">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/icons/Favicon.ico"><!-- ファビコン -->
-    <title>代わり</title>
-    <link rel="stylesheet" href="style.css">
-
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="代わりHP">
+  <meta property="og:description" content="ホームページ、見ていってね('ω')">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kawari.jp/">
+  <meta property="og:image" content="https://kawari.jp/images/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="代わりHP">
+  <meta name="twitter:description" content="ホームページ、見ていってね('ω')">
+  <meta name="twitter:image" content="https://kawari.jp/images/ogp.png">
+  <link rel="icon" href="images/icons/Favicon.ico">
+  <title>代わり</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo-area">
-      
-      <a href="https://kawari.jp/" class="logo-link">
-       <img src="images/logo.png" alt="Kawari">
-</a>
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Kawari">
+      </a>
     </div>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="メインメニュー">
       <a href="https://www.pixiv.net/users/117084566" class="nav-link">pixiv</a>
       <a href="https://kawari.booth.pm/" class="nav-link">booth</a>
-      <a href="#" class="nav-link">その他</a>
+      <a href="links.html" class="nav-link">その他</a>
     </nav>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-image-wrap">
-    <img src="images/firstimage.png" alt="kawari illustration" class="hero-img">
+      <img src="images/firstimage.png" alt="kawari illustration" class="hero-img">
       <span class="hero-signature">kawari.jp</span>
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
   <main class="main-content">
-
-    <!-- LEFT: information + about -->
     <div class="left-col">
       <section class="info-section">
         <h2 class="section-title">information</h2>
         <div class="divider"></div>
         <ul class="info-list">
-          <li><span class="info-date">#</span> #</li>
-          <li><span class="info-date">#</span> #</li>
+          <li><span class="info-date">2026/06/18</span> トップページを調整しました</li>
           <li><span class="info-date">2026/06/10</span> ブログを作り始めました</li>
         </ul>
         <div class="divider"></div>
@@ -78,57 +61,37 @@
         <div class="divider"></div>
       </section>
 
-      <!-- キャラクターイラスト（左下） -->
       <div class="char-left">
-        <img src="images/" alt="工事中" class="char-img">
+        <img src="images/ayami.png" alt="アヤミ" class="char-img">
       </div>
     </div>
 
-    <!-- RIGHT: circle info -->
-    <div class="right-col">
-      <section class="link-section"><!--circle-section➤Link-section-->
-        <h2 class="section-title"> Page</h2>
+    <aside class="right-col">
+      <section class="link-section">
+        <h2 class="section-title">Page</h2>
         <p class="circle-name">各ページはこちらから</p>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="characters.html">OC</a></li>
-        <li><a href="links.html">リンク倉庫</a></li>
-        
+        <ul>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="characters.html">OC</a></li>
+          <li><a href="links.html">リンク倉庫</a></li>
+        </ul>
         <div class="char-right">
           <img src="images/c1.png" alt="circle character" class="char-img">
         </div>
       </section>
-    </div>
-
+    </aside>
   </main>
 
-<div class="sns-item">
-  <h3 class="heading-medium front-english">X</h3>
-<a class="twitter-timeline" href="https://x.com/kawari_aya">Posts by kawari_aya</a> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script> 
-<br><br><br><br>
+  <section class="sns-item">
+    <h2 class="heading-medium front-english">X</h2>
+    <p class="x-fallback"><a href="https://x.com/kawari_aya">Posts by kawari_aya</a></p>
+  </section>
 
-<!--フッダー FOOTER NAV -->
-<footer class="footer-nav">
-      <a href="profile.html" class="footer-link">
-    <span class="footer-line"></span>
-    Profile
-    <span class="footer-line"></span>
-  </a>
-  <a href="characters.html" class="footer-link">
-    <span class="footer-line"></span>
-    キャラ紹介
-    <span class="footer-line"></span>
-  </a>
-  <a href="blog.html" class="footer-link">
-    <span class="footer-line"></span>
-    (工事中！)
-    <span class="footer-line"></span>
-  </a>
-  <a href="links.html" class="footer-link">
-    <span class="footer-line"></span>
-    (リンク集)
-    <span class="footer-line"></span>
-  </a>
-</footer>
-
+  <footer class="footer-nav">
+    <a href="profile.html" class="footer-link"><span class="footer-line"></span>Profile<span class="footer-line"></span></a>
+    <a href="characters.html" class="footer-link"><span class="footer-line"></span>キャラ紹介<span class="footer-line"></span></a>
+    <a href="nikki.html" class="footer-link"><span class="footer-line"></span>日記<span class="footer-line"></span></a>
+    <a href="links.html" class="footer-link"><span class="footer-line"></span>リンク集<span class="footer-line"></span></a>
+  </footer>
 </body>
 </html>
