@@ -257,7 +257,50 @@ img { max-width: 100%; }
   font-weight: 400;
 }
 
-.x-fallback { color: var(--text2); }
+/* .x-fallback { color: var(--text2); } */
+
+.bsky-feed {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.bsky-post {
+  padding: 14px 16px;
+  background: var(--panel-soft);
+  border: 1px solid rgba(209, 91, 100, 0.26);
+}
+
+.bsky-post-text {
+  margin-bottom: 10px;
+  color: var(--text);
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.bsky-post-meta,
+.bsky-profile-link,
+.bsky-fallback {
+  color: var(--text2);
+  font-size: 13px;
+}
+
+.bsky-post-meta,
+.bsky-profile-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.bsky-post-meta:hover,
+.bsky-profile-link:hover,
+.bsky-fallback a:hover {
+  color: var(--accent2);
+}
+
+.bsky-profile-link {
+  justify-self: center;
+  margin-top: 4px;
+}
 
 .page-main,
 .simple-page {
