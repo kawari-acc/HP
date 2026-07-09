@@ -354,12 +354,21 @@ img { max-width: 100%; }
 
   .main-content {
     grid-template-columns: 1fr;
+    display: grid;
     gap: 22px;
     width: min(100% - 28px, 640px);
     padding-top: 30px;
   }
 
-  .right-col { width: 100%; }
+  .right-col { 
+    width: 100%;
+    oeder: 2;
+  }
+
+  .info-section,
+  .about-section {
+    order: 1;
+  }
 
   .sns-item,
   .page-main,
