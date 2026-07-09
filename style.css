@@ -352,40 +352,28 @@ img { max-width: 100%; }
   }
 
   .main-content {
-    grid-template-columns: 1fr;
     display: grid;
+    grid-template-columns: 1fr;
     gap: 22px;
     width: min(100% - 28px, 640px);
     padding-top: 30px;
   }
 
-  .right-col { 
+  .right-col {
     width: 100%;
-    oeder: 2;
-  }
-
-  .info-section,
-  .about-section {
-    order: 1;
   }
 
   .sns-item,
   .page-main,
-  .simple-page { width: min(100% - 28px, 640px); }
-
+  .simple-page {
+    width: min(100% - 28px, 640px);
+  }
 
   .footer-nav {
     flex-wrap: wrap;
     row-gap: 6px;
-    
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin-top: 0;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .nav-link,
