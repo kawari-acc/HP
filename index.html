@@ -32,7 +32,8 @@
 
   <section class="hero">
     <div class="hero-image-wrap">
-      <img src="images/topimg/1.PNG" alt="kawari illustration" class="hero-img" data-hero-slideshow>
+      <img src="images/topimg/1.PNG" alt="kawari illustration" class="hero-img hero-img-active" data-hero-slide>
+      <img src="images/topimg/2.PNG" alt="" class="hero-img" data-hero-slide aria-hidden="true">
       <span class="hero-signature">kawari.jp</span>
     </div>
   </section>
@@ -108,7 +109,7 @@
     <a href="links.html" class="footer-link"><span class="footer-line"></span>リンク集<span class="footer-line"></span></a>
   </footer>
   <script>
-    const heroImage = document.querySelector("[data-hero-slideshow]");
+    const heroSlides = document.querySelectorAll("[data-hero-slide]");
     const heroImages = [
       "images/topimg/1.PNG",
       "images/topimg/2.PNG",
@@ -117,22 +118,37 @@
       "images/topimg/5.PNG"
     ];
 
-    if (heroImage && heroImages.length > 1) {
-      heroImages.slice(1).forEach((src) => {
+    if (heroSlides.length === 2 && heroImages.length > 1) {
+      heroImages.forEach((src) => {
         const image = new Image();
         image.src = src;
       });
 
       let currentHeroImage = 0;
+      let activeSlide = 0;
 
       setInterval(() => {
-        currentHeroImage = (currentHeroImage + 1) % heroImages.length;
-        heroImage.classList.add("hero-img-changing");
+        const nextHeroImage = (currentHeroImage + 1) % heroImages.length;
+        const nextHeroSrc = heroImages[nextHeroImage];
+        const nextSlide = activeSlide === 0 ? 1 : 0;
+        const incomingSlide = heroSlides[nextSlide];
+        const outgoingSlide = heroSlides[activeSlide];
 
-        setTimeout(() => {
-          heroImage.src = heroImages[currentHeroImage];
-          heroImage.classList.remove("hero-img-changing");
-        }, 450);
+        const showNextSlide = () => {
+          incomingSlide.classList.add("hero-img-active");
+          outgoingSlide.classList.remove("hero-img-active");
+
+          currentHeroImage = nextHeroImage;
+          activeSlide = nextSlide;
+        };
+
+        incomingSlide.onload = showNextSlide;
+
+        if (incomingSlide.getAttribute("src") === nextHeroSrc && incomingSlide.complete) {
+          showNextSlide();
+        } else {
+          incomingSlide.src = nextHeroSrc;
+        }
       }, 4500);
     }
   </script>

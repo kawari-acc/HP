@@ -111,22 +111,25 @@ img { max-width: 100%; }
 .hero-image-wrap {
   position: relative;
   min-height: 280px;
+  height: clamp(260px, 36vw, 420px);
   background: linear-gradient(180deg, #211316 0%, var(--bg) 100%);
 }
 
 .hero-img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: clamp(260px, 36vw, 420px);
+  height: 100%;
   object-fit: cover;
   object-position: center top;
   filter: brightness(0.9) contrast(1.04);
-  opacity: 1;
-  transition: opacity 0.45s ease;
+  opacity: 0;
+  transition: opacity 0.7s ease;
 }
 
-.hero-img-changing {
-  opacity: 0;
+.hero-img-active {
+  opacity: 1;
 }
 
 .hero-signature {
@@ -354,7 +357,7 @@ img { max-width: 100%; }
   }
 
   .nav-link { font-size: 14px; }
-  .hero-img { height: 310px; }
+  .hero-image-wrap { height: 310px; }
 
   .hero-signature {
     right: 18px;
