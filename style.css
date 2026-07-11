@@ -121,6 +121,12 @@ img { max-width: 100%; }
   object-fit: cover;
   object-position: center top;
   filter: brightness(0.9) contrast(1.04);
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
+
+.hero-img-changing {
+  opacity: 0;
 }
 
 .hero-signature {

@@ -32,7 +32,7 @@
 
   <section class="hero">
     <div class="hero-image-wrap">
-      <img src="images/firstimage.png" alt="kawari illustration" class="hero-img">
+      <img src="images/topimg/1.PNG" alt="kawari illustration" class="hero-img" data-hero-slideshow>
       <span class="hero-signature">kawari.jp</span>
     </div>
   </section>
@@ -107,5 +107,34 @@
     <span class="footer-link footer-disabled"><span class="footer-line"></span>[工事中]<span class="footer-line"></span></span>
     <a href="links.html" class="footer-link"><span class="footer-line"></span>リンク集<span class="footer-line"></span></a>
   </footer>
+  <script>
+    const heroImage = document.querySelector("[data-hero-slideshow]");
+    const heroImages = [
+      "images/topimg/1.PNG",
+      "images/topimg/2.PNG",
+      "images/topimg/3.PNG",
+      "images/topimg/4.PNG",
+      "images/topimg/5.PNG"
+    ];
+
+    if (heroImage && heroImages.length > 1) {
+      heroImages.slice(1).forEach((src) => {
+        const image = new Image();
+        image.src = src;
+      });
+
+      let currentHeroImage = 0;
+
+      setInterval(() => {
+        currentHeroImage = (currentHeroImage + 1) % heroImages.length;
+        heroImage.classList.add("hero-img-changing");
+
+        setTimeout(() => {
+          heroImage.src = heroImages[currentHeroImage];
+          heroImage.classList.remove("hero-img-changing");
+        }, 450);
+      }, 4500);
+    }
+  </script>
 </body>
 </html>
