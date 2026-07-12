@@ -278,6 +278,13 @@ img { max-width: 100%; }
 
 .simple-page p { margin-bottom: 18px; }
 
+.banner {
+display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
+
 .footer-nav {
   display: flex;
   align-items: center;
