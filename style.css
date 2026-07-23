@@ -452,3 +452,14 @@ img { max-width: 100%; }
   font-weight: 400;
   letter-spacing: 0.06em;
 }
+
+/* キャラ紹介・リンク集はページ全体を変更 */
+body.characters-page,
+body.links-page {
+  font-family: var(--font-special);
+}
+
+body.characters-page *,
+body.links-page * {
+  font-family: inherit;
+}
