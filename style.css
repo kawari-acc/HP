@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+
 /* 主にトップページ */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -18,6 +20,7 @@
   --shadow: rgba(0, 0, 0, 0.38);
   --font-en: Georgia, "Times New Roman", serif;
   --font-ja: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-special: "New Tegomin", "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -36,15 +39,6 @@ body {
 
 h2{
   text-align:center;
-}
-
-/*フォント*/
-@font-face {
-  font-family: "Maboroshi Nijimi";
-  src: url("fonts/maboroshi-nijimi-mincho.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
 }
 
 a { color: inherit; }
@@ -447,14 +441,14 @@ img { max-width: 100%; }
   color: var(--text2);
 }
 
-/* トップ画面の見出しだけ変更 */
+/* トップ画面の見出し・ナビゲーション */
 .home-page .main-content h2,
-.home-page .hero-signature {
-  font-family:
-    "Maboroshi Nijimi",
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    serif;
+.home-page .hero-signature,
+.home-page .sns-1 > p,
+.home-page .nav-link,
+.home-page .logo-text,
+.home-page .footer-link {
+  font-family: var(--font-special);
   font-weight: 400;
   letter-spacing: 0.06em;
 }
