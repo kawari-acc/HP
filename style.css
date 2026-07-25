@@ -409,6 +409,18 @@ img { max-width: 100%; }
     width: 100%;
   }
 
+  .sns-1 {
+    width: calc(100% - 48px);
+    max-width: 520px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .sns-1 bst-widget {
+    width: 100%;
+    touch-action: pan-y;
+  }
+
   .sns-item,
   .page-main,
   .simple-page {
